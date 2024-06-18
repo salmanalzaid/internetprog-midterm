@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MovieHub - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+        padding:0% 3% 10% 3%;
+        text-align:center;
+        }
+        h1{
+        color: #ffffff;
+        margin-top:30px;
+        }
+    
+        button{
+            cursor: pointer;
+            border: 1px solid #555;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px; 
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>The MovieHub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button onclick="myFunction()">Switch mode</button>
+            <script>
+                    function myFunction() {
+                        let element = document.body;
+                        element.classList.toggle("dark");
+                    }
+                </script>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have questions, feedback, or suggestions, feel free to reach out to us using the form below. Our team is here to assist you.</p>
+
+            <form>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone"><br><br>
+                
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+                
+                <input type="submit" value="Submit">
+            </form>
+            
+            <div class="contact-info">
+                <h3>Our Contact Information</h3>
+                <p><strong>Email:</strong> contact@themoviehub.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Address:</strong> 123 Movie Lane, Film City, CA 90001</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h2>The MovieHub</h2>
+                <p>Your ultimate destination for all things movies! Discover, discuss, and recommend movies with our community of movie enthusiasts.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us On</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a></p>
+            <p>© 2024 The MovieHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

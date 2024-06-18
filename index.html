@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>The MovieHub - Home</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="/path/to/css/qc.slider.css" />
+        <script src="/path/to/cdn/jquery.min.js"></script>
+        <script src="/path/to/qcslider.jquery.js"></script>
+        <style>
+            body{
+            padding:0% 3% 10% 3%;
+            text-align:center;
+            }
+            h1{
+            color: #ffffff;
+            margin-top:30px;
+            }
+        
+            button{
+                cursor: pointer;
+                border: 1px solid #555;
+                text-align: center;
+                padding: 5px;
+                margin-left: 8px; 
+            }
+            .dark{
+                background-color: #222;
+                color: #e6e6e6;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- Navigation bar Home, About, Contact-->
+            <h1>The MovieHub</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+                
+                
+            </nav>
+
+            <button onclick="myFunction()">Switch mode</button>
+            <script>
+                    function myFunction() {
+                        let element = document.body;
+                        element.classList.toggle("dark");
+                    }
+                </script>
+
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <!-- User input and result into the same section  -->
+                <section class="form-section">
+                    <h2>Add Movie Recommendation</h2>
+                    <!-- user input of movie info-->
+                    <form id="movieForm">
+                        <label for="movieName">Movie Name:</label><br />
+                        <input
+                            type="text"
+                            id="movieName"
+                            name="movieName"
+                            required
+                        /><br /><br />
+
+                        <label for="rating">Rating(out of 10):</label><br />
+                        <input
+                            type="text"
+                            id="rating"
+                            name="rating"
+                            required
+                        /><br /><br />
+
+                        <label for="action">Action:</label><br />
+                        <input
+                            type="text"
+                            id="action"
+                            name="action"
+                            required
+                        /><br /><br />
+
+                        <input type="submit" value="Submit" />
+                    </form>
+                </section>
+
+                <section class="table-section">
+                    <h2>Movie Recommendations</h2>
+                    <table id="recommendationsTable">
+                        <thead>
+                            <tr>
+                                <th>Movie Name</th>
+                                <th>Rating</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+                    <!-- Add carousel section here -->
+                    <section class="carousel-section">
+                        <h2>Upcoming movies in 2024 !</h2>
+                        <div class="carousel-container">
+                            <button class="prev-btn" onclick="prevVideo()">
+                                &#10094;
+                            </button>
+                            <div class="video-wrapper">
+                                <div class="carousel">
+                                    <video
+                                        class="carousel-video"
+                                        controls
+                                    >
+                                        <source
+                                         src="https://www.youtube.com/embed/73_1biulkYk?si=HpZ-Avi0koda2pxi" 
+                                        />
+                                        Your browser does not support the video
+                                        tag.
+                                    </video>
+                                    <iframe class="carousel-video" width="560" height="315" src="https://www.youtube.com/embed/LO42RuMcLe8?si=LZXNegokASSyquDe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <iframe class="carousel-video" width="560" height="315" src="https://www.youtube.com/embed/73_1biulkYk?si=nTtxzaI2TmlfcDLD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <iframe class="carousel-video" width="560" height="315" src="https://www.youtube.com/embed/OzY2r2JXsDM?si=r5tGxpfEdSuwhRiO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <button class="next-btn" onclick="nextVideo()">
+                                &#10095;
+                            </button>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <!-- Footer -->
+
+            <div class="footer-columns">
+                <!-- footer starts from here -->
+                <div class="footer-column">
+                    <h2>The MovieHub</h2>
+                    <p>
+                        Your ultimate destination for all things movies!
+                        Discover, discuss, and recommend movies with our
+                        community of movie enthusiasts.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h2>Follow Us On</h2>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <!-- quick links navigation -->
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    <a href="#">Privacy Policy</a> |
+                    <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+                </p>
+                <p>© 2024 The MovieHub. All rights reserved.</p>
+            </div>
+        </footer>
+        <script src="scripts.js"></script>
+    </body>
+</html>

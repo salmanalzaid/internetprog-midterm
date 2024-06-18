@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MovieHub - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+        padding:0% 3% 10% 3%;
+        text-align:center;
+        }
+        h1{
+        color: #ffffff;
+        margin-top:30px;
+        }
+    
+        button{
+            cursor: pointer;
+            border: 1px solid #555;
+            text-align: center;
+            padding: 5px;
+            margin-left: 8px; 
+        }
+        .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The MovieHub</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button onclick="myFunction()">Switch mode</button>
+            <script>
+                    function myFunction() {
+                        let element = document.body;
+                        element.classList.toggle("dark");
+                    }
+                </script>
+    </header>
+    <main>
+        <section class="about-section">
+            <h2>About The MovieHub</h2>
+            <p>Welcome to The MovieHub, your ultimate destination for all things movies! Whether you are a casual moviegoer or a passionate cinephile, The MovieHub is designed to cater to all your movie-related needs.</p>
+
+            <h3>Our Mission</h3>
+            <p>At The MovieHub, our mission is to provide a comprehensive platform where movie enthusiasts can discover, discuss, and recommend movies. We aim to foster a community of movie lovers who share their thoughts, reviews, and ratings on the latest releases and timeless classics.</p>
+
+            <h3>What We Offer</h3>
+            <ul>
+                <li><strong>Movie Reviews:</strong> Get in-depth reviews of the latest movies from our team of experienced critics and movie buffs.</li>
+                <li><strong>Trailers and Previews:</strong> Watch the latest trailers and get a sneak peek at upcoming releases.</li>
+                <li><strong>Movie Recommendations:</strong> Explore curated lists of movie recommendations tailored to various genres and moods.</li>
+                <li><strong>Community Engagement:</strong> Join our vibrant community to discuss and share your favorite movies and reviews.</li>
+                <li><strong>Industry News:</strong> Stay updated with the latest news and trends in the movie industry.</li>
+            </ul>
+
+            <h3>Our Team</h3>
+            <p>The MovieHub is run by a team of dedicated movie enthusiasts who live and breathe cinema. From seasoned critics to passionate fans, our team is committed to bringing you the best content and recommendations.</p>
+
+            <h3>Join Us</h3>
+            <p>Become a part of The MovieHub community today! Sign up to receive our newsletter, participate in discussions, and contribute your own reviews and recommendations. Together, let's celebrate the magic of movies!</p>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h2>The MovieHub</h2>
+                <p>Your ultimate destination for all things movies! Discover, discuss, and recommend movies with our community of movie enthusiasts.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us On</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a></p>
+            <p>© 2024 The MovieHub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
