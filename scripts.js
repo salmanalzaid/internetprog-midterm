@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
         cell2.textContent = rating;
         cell3.textContent = action;
     }
+    function deleteData(button) {
+
+        // Get the parent row of the clicked button
+        let row = button.parentNode.parentNode;
+
+        // Remove the row from the table
+        row.parentNode.removeChild(row);
+    }
 
     // Load movie recommendations from local storage
     function loadMoviesFromStorage() {
@@ -59,55 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/* Carousel JS */
-// let currentIndex = 0;
-// let autoPlayInterval;
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     autoPlayVideos();
-// });
-
-// function showVideo(index) {
-//     const carousel = document.querySelector(".carousel");
-//     const videos = document.querySelectorAll(".carousel-video");
-//     const totalVideos = videos.length;
-
-//     if (index >= totalVideos) {
-//         currentIndex = 0;
-//     } else if (index < 0) {
-//         currentIndex = totalVideos - 1;
-//     } else {
-//         currentIndex = index;
-//     }
-
-//     carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-//     videos[currentIndex].play();
-//     for (let i = 0; i < videos.length; i++) {
-//         if (i !== currentIndex) {
-//             videos[i].pause();
-//         }
-//     }
-// }
-
-// function nextVideo() {
-//     showVideo(currentIndex + 1);
-// }
-
-// function prevVideo() {
-//     showVideo(currentIndex - 1);
-// }
-
-// function autoPlayVideos() {
-//     autoPlayInterval = setInterval(() => {
-//         nextVideo();
-//     }, 5000);
-// }
-
-// function stopAutoPlay() {
-//     clearInterval(autoPlayInterval);
-// }
-
-// Carousel
 let currentIndex = 0;
 let autoPlayInterval;
 
