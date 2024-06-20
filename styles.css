@@ -20,10 +20,30 @@ header {
     transform: scale(1.1);
 }
 
-.dark body{
+.dark main{
         background-color: #222;
         color: #e6e6e6;
     }
+.form-section{
+        background-color: #f9f9f9;
+        color: #222;
+}
+
+.table-section{
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+.about-section{
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+.contact-section{
+    background-color: #f9f9f9;
+    color: #222;  
+}
+
 /*Header css */
 
 body {
