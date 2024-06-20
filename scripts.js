@@ -1,70 +1,41 @@
-// Wait for the DOM to fully load
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("movieForm"); // Get the form element
-    const table = document
-        .getElementById("recommendationsTable")
-        .getElementsByTagName("tbody")[0]; // Get the table body
+document.addEventListener("DOMContentLoaded", function () {
+    const movieForm = document.getElementById("movieForm");
+    const recommendationsTable = document.getElementById("recommendationsTable").getElementsByTagName("tbody")[0];
 
-    // Function to add a movie recommendation to the table
-    function addMovieToTable(movieName, rating, action) {
-        // Create a new row in the table
-        const newRow = table.insertRow();
-
-        // Create cells and append data
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        const cell3 = newRow.insertCell(2);
-
-        cell1.textContent = movieName;
-        cell2.textContent = rating;
-        cell3.textContent = action;
-    }
-    function deleteData(button) {
-
-        // Get the parent row of the clicked button
-        let row = button.parentNode.parentNode;
-
-        // Remove the row from the table
-        row.parentNode.removeChild(row);
-    }
-
-    // Load movie recommendations from local storage
-    function loadMoviesFromStorage() {
-        const movies = JSON.parse(localStorage.getItem("movies")) || []; // Retrieve movies from local storage
-
-        // Loop through each movie and add it to the table
-        movies.forEach((movie) => {
-            addMovieToTable(movie.movieName, movie.rating, movie.action);
-        });
-    }
-
-    // Add pre-filled movies to the table
-    addMovieToTable("The Shawshank Redemption", "9.3", "Drama");
-    addMovieToTable("Inception", "8.8", "Action");
-
-    // Load movies from local storage
-    loadMoviesFromStorage();
-
-    // Add event listener for form submission
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting the traditional way
-
-        // Get the form data
+    movieForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
         const movieName = document.getElementById("movieName").value;
         const rating = document.getElementById("rating").value;
         const action = document.getElementById("action").value;
+        
+        const newRow = recommendationsTable.insertRow();
+        newRow.innerHTML = `
+            <td>${movieName}</td>
+            <td>${rating}</td>
+            <td>${action}</td>
+            <td><button class="edit-btn">Edit</button></td>
+            <td><button class="delete-btn">Delete</button></td>
+        `;
+        
+        newRow.querySelector(".edit-btn").addEventListener("click", () => editRow(newRow));
+        newRow.querySelector(".delete-btn").addEventListener("click", () => deleteRow(newRow));
 
-        // Add the movie to the table
-        addMovieToTable(movieName, rating, action);
-
-        // Save the movie to local storage
-        const movies = JSON.parse(localStorage.getItem("movies")) || []; // Retrieve movies from local storage
-        movies.push({ movieName, rating, action }); // Add the new movie
-        localStorage.setItem("movies", JSON.stringify(movies)); // Save movies back to local storage
-
-        // Clear the form after submission
-        form.reset();
+        movieForm.reset();
     });
+        //function to edit the row 
+    function editRow(row) {
+        const cells = row.getElementsByTagName("td");
+        document.getElementById("movieName").value = cells[0].innerText;
+        document.getElementById("rating").value = cells[1].innerText;
+        document.getElementById("action").value = cells[2].innerText;
+
+        recommendationsTable.deleteRow(row.rowIndex - 1);
+    }
+        //function to delete the row
+    function deleteRow(row) {
+        recommendationsTable.deleteRow(row.rowIndex - 1);
+    }
 });
 
 let currentIndex = 0;
